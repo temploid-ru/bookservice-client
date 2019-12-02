@@ -1,0 +1,71 @@
+<div class="fw-fz-17" *ngIf="reservation">
+  <h1 class="fw-fz-25 mb-2 fw-font-roboto-slab">9 Столик</h1>
+
+  <div class="mb-4">
+    <div>{{reservation?.date_start | amFromUnix | amDateFormat:'HH:mm'}} – {{reservation?.date_end | amFromUnix | amDateFormat:'HH:mm'}}</div>
+    <div class="fw-fz-15 fw-color-gray">
+      <span [innerHTML]="reservation.date_start | dateSelectorDay"></span>
+      {{reservation.date_start | amFromUnix | amDateFormat: 'DD MMM, dddd'}}
+    </div>
+  </div>
+
+  <div class="mb-4">
+    <div>{{reservation.client.name}}</div>
+    <div>{{reservation.client.phone}}</div>
+    <div class="fw-fz-15 fw-color-gray">{{reservation.num_guests | wordsEndings:['гость', 'гостя', 'гостей']}}</div>
+  </div>
+
+  <div class="d-flex align-items-center justify-content-between mb-4">
+    <div>
+      <span class="fw-fz-15 fw-color-gray">Без депозита</span>
+    </div>
+    <div>
+      <span class="payment-notification success">
+        Подтвержден
+      </span>
+      <span class="payment-notification processing">
+        Ожидает оплаты
+      </span>
+      <span class="payment-notification canceled">
+        Отменен
+      </span>
+    </div>
+  </div>
+
+  <div class="fw-fz-15 fw-color-gray">Без депозита</div>
+  <div class="d-flex align-items-center justify-content-between mb-4">
+    <div class="fw-fz-22 fw-text-500">
+      250 ₽
+    </div>
+    <div>
+      <span class="payment-notification success">
+        Подтвержден
+      </span>
+      <span class="payment-notification processing">
+        Ожидает оплаты
+      </span>
+      <span class="payment-notification canceled">
+        Отменен
+      </span>
+    </div>
+  </div>
+
+  <div class="mb-4" *ngIf="!reservation.paid">
+    <div class="deposit-not-payed-notification">Депозит не был оплачен</div>
+  </div>
+
+  <div class="row">
+    <div class="col pr-2">
+      <button class="btn btn-secondary btn-lg col">Редактировать</button>
+    </div>
+    <div class="col pl-2">
+      <button class="btn btn-secondary btn-lg col"><span class="fw-color-red">Отменить бронь</span></button>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col pr-2">
+      <button class="btn btn-secondary btn-lg col">Удалить</button>
+    </div>
+  </div>
+</div>

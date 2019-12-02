@@ -1,0 +1,31 @@
+<div>
+  <h1 class="fw-font-roboto-slab fw-fz-25">Забронировать столик</h1>
+
+  <form [formGroup]="form" (ngSubmit)="submit($event)">
+    <div>
+      <app-restaurant-item></app-restaurant-item>
+    </div>
+    <div>
+      <ui-date-selector [options]="days" formControlName="date"></ui-date-selector>
+    </div>
+    <hr class="gray-separator">
+    <div>
+      <ui-guests-selector formControlName="guests"></ui-guests-selector>
+    </div>
+    <hr class="gray-separator">
+    <div>
+      <ui-time-selector [title]="'Время'" [options]="timeOptions" formControlName="time"></ui-time-selector>
+    </div>
+    <hr class="gray-separator">
+    <div>
+      <ui-table-selector [tables]="tables$ | async" formControlName="table"></ui-table-selector>
+    </div>
+    <hr class="gray-separator">
+    <div>
+      <ui-textarea formControlName="wishes"></ui-textarea>
+    </div>
+    <div class="reservation-button-wrapper">
+      <button type="submit" [disabled]="form.invalid" class="btn btn-primary btn-lg col">Продолжить</button>
+    </div>
+  </form>
+</div>

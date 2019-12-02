@@ -1,0 +1,44 @@
+<div [style.paddingTop.px]="gridHeight"
+     class="timeline__table-wrapper">
+  <div *ngFor="let table of tables"
+       class="timeline__table-number text-center d-flex justify-content-center fw-fz-12"
+       [style.height.px]="gridHeight"
+       [style.lineHeight.px]="gridHeight"
+       [style.width.px]="gridWidth">{{table.number}}</div>
+</div>
+
+<div class="timeline-wrapper position-relative" id="wrapper" (scroll)="onScroll($event)">
+  <div #spacer></div>
+  <div stickyThing
+       [spacer]="spacer"
+       [style.zIndex]="5"
+       [style.left.px]="stickyLeft">
+    <div [style.width.px]="(gridSteps + 1) * gridWidth"
+         [style.height.px]="gridHeight"
+         class="timeline__header d-flex justify-content-center text-center">
+      <div class="fw-fz-12" [style.width.px]="gridWidth"></div>
+      <div class="fw-fz-12 d-flex justify-content-center align-items-center" *ngFor="let item of timelineHeaderItems"
+           [style.width.px]="gridWidth">{{item.title}}</div>
+    </div>
+  </div>
+  <div class="timeline-diagram-container position-relative" [style.marginTop.px]="-gridHeight">
+    <div id="timeline-chart"></div>
+    <app-timeline-table *ngFor="let table of tables; let i = index"
+                        [table]="table"
+                        [tableIndex]="i"
+                        [style.top.px]="i * gridHeight + gridHeight"
+                        [style.left.px]="gridWidth"
+                        [style.width.px]="gridWidth * gridSteps"
+                        [style.height.px]="gridHeight"
+                        class="d-block">
+      <app-timeline-item *ngFor="let timeline of table.booking_entries"
+                         (click)="tableSelect.emit(timeline)"
+                         [timeline]="timeline"
+                         [hoursGrid]="timelineHeaderItems"
+                         [ngClass]="{canceled: timeline.status === 'CANCELED', pending: timeline.status === 'PENDING'}"
+                         [style.height.px]="gridHeight * 0.85"
+                         [gridSettings]="{gridWidth: gridWidth, gridSteps: gridSteps, minuteFactor: minuteFactor, defaultGridWidth: defaultGridWidth}"
+                         class="d-block"></app-timeline-item>
+    </app-timeline-table>
+  </div>
+</div>

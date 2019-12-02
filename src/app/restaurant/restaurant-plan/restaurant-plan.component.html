@@ -1,0 +1,8 @@
+<div class="container">
+  <app-tables-selector (selectTable)="onSelectTable($event)"></app-tables-selector>
+
+  <app-canvas-map (updateTable)="onUpdateTable($event)" [planImage]="image" [addTable$]="addTable$"></app-canvas-map>
+
+
+  <input type="file" style="position: absolute; top: 0; left: 0; z-index: 2" name="file" (change)="selectPlan($event)">
+</div>

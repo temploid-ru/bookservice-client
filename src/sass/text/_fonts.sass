@@ -1,0 +1,7 @@
+@each $name, $font in $fonts
+  .fw-font-#{$name}
+    font-family: $font, "Helvetica Neue", "sans-serif"
+
+@each $fw in $fontWeight
+  .fw-text-#{$fw}
+    font-weight: $fw

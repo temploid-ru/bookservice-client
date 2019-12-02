@@ -1,0 +1,11 @@
+<div class="pt-3 pb-3">
+  <div class="d-flex justify-content-between align-items-center mb-1">
+    <div class="caption-medium">{{title}}</div>
+    <div>{{state?.title}}</div>
+  </div>
+  <div class="row text-center">
+    <div class="col-3 d-flex align-items-center justify-content-center" (click)="updateValue(item)" *ngFor="let item of options">
+      <span class="circle-selector" [ngClass]="{'selected': state?.value === item.value, disabled: item.disabled}">{{item[titleField]}}</span>
+    </div>
+  </div>
+</div>

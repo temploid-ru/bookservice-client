@@ -1,0 +1,28 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit($event)">
+  <div>
+    <input class="form-control" placeholder="Заголовка стола" type="text" formControlName="title">
+  </div>
+  <div>
+    <input class="form-control" placeholder="Количество человек" type="text" formControlName="count">
+  </div>
+  <div>
+    <input class="form-control" placeholder="Номер стола" type="text" formControlName="number">
+  </div>
+  <div>
+    <label>
+      <input type="radio" formControlName="type" value="round">
+      <span>Круглый</span>
+    </label>
+    <label>
+      <input type="radio" formControlName="type" value="square">
+      <span>Квадратный</span>
+    </label>
+    <label>
+      <input type="radio" formControlName="type" value="polygon">
+      <span>Прямоугольный</span>
+    </label>
+  </div>
+  <div>
+    <button class="btn btn-dark">Добавить</button>
+  </div>
+</form>

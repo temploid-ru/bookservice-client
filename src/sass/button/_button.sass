@@ -1,0 +1,55 @@
+button, a
+  &:hover, &:active, &:focus
+    outline: 0 !important
+
+.btn
+  font-size: 17px
+  box-shadow: none !important
+  outline: none
+
+  &-secondary
+    background-color: #F0F0F0
+    border: none
+    color: #000000
+
+    &:active, &:focus, &:hover
+      background-color: #F0F0F0
+      border: none
+
+  &-primary
+    background-color: #1EC025
+    border: none
+
+    &:active, &:focus, &:hover
+      background-color: #1EC025
+      border: none
+
+    &[disabled]
+      background-color: #F0F0F0
+
+  &.btn-lg
+    padding: 13px
+    font-weight: 500
+
+  &.btn-round
+    width: 60px
+    height: 60px
+    position: relative
+    border-radius: 60px
+
+  &.btn-plus
+    &:after, &:before
+      position: absolute
+      display: block
+      content: ''
+      width: 20px
+      height: 2px
+      background-color: #fff
+      left: 50%
+      top: 50%
+      transform: translate(-50%, -50%)
+
+    &:before
+      height: 20px
+      width: 2px
+

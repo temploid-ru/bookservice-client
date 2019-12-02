@@ -1,0 +1,41 @@
+<ng-container *ngIf="reservation">
+  <app-restaurant-item [showPoster]="false" class="d-block mb-3"></app-restaurant-item>
+
+  <table class="reservation-table">
+    <tr>
+      <td>Гости</td>
+      <td>{{reservation.num_guests | wordsEndings:['гостя', 'гостя', 'гостей']}}</td>
+    </tr>
+    <tr>
+      <td>Дата</td>
+      <td>
+        <span [innerHTML]="reservation.date_start | dateSelectorDay"></span>
+        {{reservation.date_start | amDateFormat: 'DD MMM, dddd'}}
+      </td>
+    </tr>
+    <tr>
+      <td>Время</td>
+      <td>{{reservation.date_start | amDateFormat: 'HH:mm'}}</td>
+    </tr>
+    <tr>
+      <td>Столик</td>
+      <td>{{reservation.table_number}}</td>
+    </tr>
+    <tr class="client-data">
+      <td>Имя</td>
+      <td>{{reservation.client.name}}</td>
+    </tr>
+    <tr>
+      <td>Телефон</td>
+      <td>{{reservation.client.phone}}</td>
+    </tr>
+    <tr *ngIf="!isTotal">
+      <td class="pt-4">К оплате</td>
+      <td class="pt-4">
+      <span class="fw-fz-34 fw-color-black fw-text-500">
+        {{amount}} ₽
+      </span>
+      </td>
+    </tr>
+  </table>
+</ng-container>

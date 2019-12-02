@@ -1,0 +1,83 @@
+<div>
+  <h1 class="fw-font-roboto-slab fw-fz-25">Забронировать столик</h1>
+
+  <form [formGroup]="form" (ngSubmit)="submit($event)">
+    <div>
+      <ui-date-selector [options]="days" formControlName="date"></ui-date-selector>
+    </div>
+    <hr class="gray-separator">
+    <div>
+      <ui-guests-selector formControlName="guests"></ui-guests-selector>
+    </div>
+    <hr class="gray-separator">
+    <div>
+      <ui-time-selector [title]="'Время'" [options]="timeOptions" formControlName="time"></ui-time-selector>
+    </div>
+    <hr class="gray-separator">
+    <div class="pt-3 pb-3">
+      <div class="caption-medium mb-3">Длительность</div>
+      <div>
+        <mat-select formControlName="duration">
+          <mat-option *ngFor="let duration of reservationDuration" [value]="duration.value">
+            {{duration.title}}
+          </mat-option>
+        </mat-select>
+      </div>
+    </div>
+    <hr class="gray-separator">
+    <div>
+      <ui-table-selector [tables]="tables$ | async"
+                         formControlName="table"
+                         [readonly]="type === 'EDIT'"
+                         [isAdmin]="true"></ui-table-selector>
+    </div>
+    <hr class="gray-separator">
+    <div class="pt-3 pb-3">
+      <div class="caption-medium mb-3">Клиент</div>
+      <div class="row">
+        <label class="form-group col">
+          <input type="text" class="col form-control form-control-lg" formControlName="name" placeholder="Имя">
+        </label>
+      </div>
+      <div class="row">
+        <label class="form-group col">
+          <input type="tel" class="col form-control form-control-lg" prefix="+7 " mask="(000)-000-00-00"
+                 formControlName="phone"
+                 placeholder="Телефон">
+        </label>
+      </div>
+      <ng-container *ngIf="form.controls.table.value">
+        <hr class="gray-separator">
+        <div class="pt-2">
+          <div class="caption-medium mb-3">Депозит</div>
+        </div>
+        <div class="row">
+          <div class="form-group col">
+            <div class="position-relative">
+              <input type="number"
+                     readonly
+                     [value]="form.controls.table?.value?.deposit"
+                     placeholder="Сумма депозита"
+                     class="form-control form-control--icon form-control-lg">
+              <div class="form-control__icon fw-color-gray">₽</div>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+    <hr class="gray-separator">
+    <div>
+      <ui-textarea formControlName="wishes"></ui-textarea>
+    </div>
+    <div class="reservation-button-wrapper row">
+      <div class="col">
+        <button type="button" class="btn btn-secondary btn-lg col" routerLink="/admin">Отмена</button>
+      </div>
+      <div class="col">
+        <button type="submit" [disabled]="form.invalid" class="btn btn-primary btn-lg col">
+          {{type === 'CREATE' ? 'Забронировать' : 'Сохранить'}}
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,8 @@
+<div class="options d-flex">
+  <div class="options__item col text-center pt-1 pb-1 {{size}}"
+       (click)="updateValue(option)"
+       [ngClass]="{'active': option.value === state?.value}"
+       *ngFor="let option of options">
+    {{option.title}}
+  </div>
+</div>

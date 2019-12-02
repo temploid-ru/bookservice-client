@@ -1,0 +1,13 @@
+<div class="pt-3 pb-3 d-flex justify-content-between align-items-center">
+  <div class="caption-medium">{{state}} {{ending}}</div>
+  <div>
+    <button type="button" class="d-inline-flex justify-content-center align-items-center circle-button mr-2"
+            (click)="decrease($event)">
+      <i class="icon icon-minus"></i>
+    </button>
+    <button type="button" class="d-inline-flex justify-content-center align-items-center circle-button"
+            (click)="increase($event)">
+      <i class="icon icon-plus"></i>
+    </button>
+  </div>
+</div>

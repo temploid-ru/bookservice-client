@@ -1,0 +1,13 @@
+h1, h2, h3, h4, h5, h6
+  font-weight: normal
+  font-style: normal
+
+.caption
+  &-medium
+    font-family: "Roboto Slab", "Helvetica Neue", sans-serif
+    font-size: 20px
+    line-height: 26px
+
+@each $var in $fontSize
+  .fw-fz-#{$var}
+    font-size: #{$var}px

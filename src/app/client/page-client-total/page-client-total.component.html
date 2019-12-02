@@ -1,0 +1,19 @@
+<div class="text-center">
+  <div><img src="./assets/icons/icon-reservation-success.svg" alt=""></div>
+  <div class="mb-2 fw-fz-25 fw-font-roboto-slab mt-3 mb-2">
+    Столик забронирован
+  </div>
+  <div>
+    В близжайше время на номер <br>
+    <span class="fw-color-green">+7 (234) 342-34-34</span>
+    <ng-container *ngIf="type === 'SMS'"> придет смс с подтверждением брони</ng-container>
+    <ng-container *ngIf="type === 'CALL'"> позвонит диспетчер для подтверждения брони</ng-container>
+  </div>
+</div>
+
+<app-reservation-deposit class="mt-4" [amount]="reservation.deposit"></app-reservation-deposit>
+
+<app-reservation-info *ngIf="reservation"
+                      [reservation]="reservation"
+                      class="d-block mt-3 mb-3"
+                      [isTotal]="true"></app-reservation-info>

@@ -1,0 +1,29 @@
+<div>
+  <h1 class="fw-font-roboto-slab fw-fz-25 mb-2 pb-1">Забронировать столик</h1>
+  <form class="d-flex align-items-center mb-5" [formGroup]="form">
+    <div class="flex-grow-1 fw-flex-basis-0 fw-min-width-0">
+      <mat-form-field class="fw-width-100-p">
+        <mat-datepicker-toggle matPrefix [for]="picker"></mat-datepicker-toggle>
+        <div (click)="picker.open()">
+          <span [innerHTML]="form.value.date | dateSelectorDay"></span>
+          {{form.value.date | amLocale: 'ru' | amDateFormat: 'DD MMM, dd'}}
+        </div>
+        <input class="d-none" matInput [matDatepicker]="picker" formControlName="date">
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </div>
+    <div class="text-right pl-3 flex-shrink-0">
+      <button class="round-button left mr-2" (click)="changePickerDay(-1)">left</button>
+      <button class="round-button right" (click)="changePickerDay(1)">right</button>
+    </div>
+  </form>
+
+  <app-gantt-timeline-chart (tableSelect)="onTableSelect($event)"
+                            *ngIf="timelineHeaderItems.length"
+                            [timelineHeaderItems]="timelineHeaderItems"
+                            [tables]="tables$ | async"></app-gantt-timeline-chart>
+
+  <div class="fixed-bottom col text-center pb-2">
+    <button type="button" class="btn btn-primary btn-round btn-plus btn-lg" routerLink="add"></button>
+  </div>
+</div>

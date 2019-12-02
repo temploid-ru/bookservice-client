@@ -1,0 +1,31 @@
+<div class="d-flex flex-column fw-height-percent-100">
+  <div class="popup-header d-flex justify-content-between align-items-center mb-3 fw-flex-shrink-0">
+    <div class="flex-grow-1 fw-fz-20 text-center flex-shrink-0 fw-font-roboto-slab">Выберите столик</div>
+  </div>
+  <div id="client-map" class="flex-grow-1">
+    <app-client-map class="d-block" [tables]="tables$ | async"
+                    [selectedTable]="selectedTable"
+                    (preview)="onPreview($event)"></app-client-map>
+  </div>
+  <div class="pl-1 pr-1 pb-1 text-center mt-3 fw-flex-shrink-0">
+    <div class="mb-3" [ngClass]="{'fw-opacity-0': !selectedTable}">
+      {{selectedTable?.number}} столик
+      <span class="fw-color-gray">
+        макс. {{selectedTable?.num_persons}} человека
+      </span>
+    </div>
+    <div class="d-flex">
+      <div class="col-6 pr-1 pl-0">
+        <button type="button" class="col btn btn-secondary btn-lg" mat-dialog-close>Отмена</button>
+      </div>
+      <div class="col-6 pr-0 pl-1">
+        <button type="button"
+                [disabled]="!selectedTable"
+                class="col btn btn-primary btn-lg" [mat-dialog-close]="selectedTable">
+          Выбрать
+          <ng-container *ngIf="selectedTable?.deposit > 0">({{selectedTable?.deposit}} ₽)</ng-container>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

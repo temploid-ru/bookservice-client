@@ -1,0 +1,26 @@
+<div class="pt-3 pb-3">
+  <div class="d-flex justify-content-between align-items-end mb-2 pb-1">
+    <div class="caption-medium">
+      Дата
+    </div>
+    <div class="fw-color-gray fw-fz-15">
+      <ng-container *ngIf="state">
+        <span [innerHTML]="state.value | dateSelectorDay"></span>
+        {{state.value | amLocale:'ru' | amDateFormat: 'DD MMM, dddd'}}
+      </ng-container>
+    </div>
+  </div>
+  <div>
+    <table class="col" cellspacing="0" cellpadding="0">
+      <tr *ngFor="let week of calendar">
+        <td (click)="updateValue(day)" class="text-center" *ngFor="let day of week">
+          <span class="circle-selector ml-auto mr-auto"
+                [ngClass]="{
+                  'selected': state && state.dayString === day?.dayString,
+                  'disabled': day?.disabled
+                }">{{day?.title}}</span>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
