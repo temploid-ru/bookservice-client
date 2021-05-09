@@ -4591,6 +4591,13 @@ ng2-konva@^6.0.0:
   dependencies:
     tslib "^1.9.0"
 
+ngx-mask@^8.1.5:
+  version "8.2.0"
+  resolved "https://registry.yarnpkg.com/ngx-mask/-/ngx-mask-8.2.0.tgz#1eac06d96d09fc62dd6f4b3f285f7fca50838d08"
+  integrity sha512-eWEnaHnLz3x/OuI8HVrmGciR2U84c/GoNjyUwCHxhskHevMuCPJRnbHag19ggQJKaTjmzpP+LyPHslOqPgbQ5w==
+  dependencies:
+    tslib "^1.9.0"
+
 ngx-moment@^3.4.0:
   version "3.4.0"
   resolved "https://registry.yarnpkg.com/ngx-moment/-/ngx-moment-3.4.0.tgz#53bd64557e552c612b0f68b975d1c7ed34f28dfc"
@@ -4602,6 +4609,13 @@ ngx-take-until-destroy@^5.4.0:
   version "5.4.0"
   resolved "https://registry.yarnpkg.com/ngx-take-until-destroy/-/ngx-take-until-destroy-5.4.0.tgz#6c8606ee956584dc947e2eb609c48b8f98b09900"
   integrity sha512-e+VfCrHbLybdKWoQ8prdhmVzWI6vTnedr/9cVGQTkfepMdLz5D++VDk+Wnbs7mru6S9C+kIpNWUlh2YMPl928Q==
+  dependencies:
+    tslib "^1.9.0"
+
+ngx-webstorage@^4.0.1:
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/ngx-webstorage/-/ngx-webstorage-4.0.2.tgz#6c039c96e580d474150401085a0ff94365058732"
+  integrity sha512-OsYy/5KSC6PdWbYAjDfgT3wP1OxsNscZnapAzC1zeeYcxEhwOPfWg6AxEAbH+8IPCXXI4xeJ3fsDD07C8z/cQA==
   dependencies:
     tslib "^1.9.0"
 
@@ -5487,9 +5501,9 @@ querystring@0.2.0:
   integrity sha1-sgmEkgO7Jd+CDadW50cAWHhSFiA=
 
 querystringify@^2.1.1:
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/querystringify/-/querystringify-2.1.1.tgz#60e5a5fd64a7f8bfa4d2ab2ed6fdf4c85bad154e"
-  integrity sha512-w7fLxIRCRT7U8Qu53jQnJyPkYZIaR4n5151KMfcJlO/A9397Wxb1amJvROTK6TOnp7PfoAmg/qXiNHI+08jRfA==
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/querystringify/-/querystringify-2.2.0.tgz#3345941b4153cb9d082d8eee4cda2016a9aef7f6"
+  integrity sha512-FIqgj2EUvTa7R50u0rGsyTftzjYmv/a3hO345bZNrqabNqjtgiDMgmo4mkUjd+nzU5oF3dClKqFIPUKybUyqoQ==
 
 randombytes@^2.0.0, randombytes@^2.0.1, randombytes@^2.0.5:
   version "2.1.0"
@@ -6981,9 +6995,9 @@ url-join@^2.0.5:
   integrity sha1-WvIvGMBSoACkjXuCxenC4v7tpyg=
 
 url-parse@^1.4.3:
-  version "1.4.7"
-  resolved "https://registry.yarnpkg.com/url-parse/-/url-parse-1.4.7.tgz#a8a83535e8c00a316e403a5db4ac1b9b853ae278"
-  integrity sha512-d3uaVyzDB9tQoSXFvuSUNFibTd9zxd2bkVrDRvF5TmvWWQwqE4lgYJ5m+x1DbecWkw+LK4RNl2CU1hHuOKPVlg==
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/url-parse/-/url-parse-1.5.1.tgz#d5fa9890af8a5e1f274a2c98376510f6425f6e3b"
+  integrity sha512-HOfCOUJt7iSYzEx/UqgtwKRMC6EU91NFhsCHMv9oM03VJcVo2Qrp8T8kI9D7amFf1cu+/3CEhgb3rF9zL7k85Q==
   dependencies:
     querystringify "^2.1.1"
     requires-port "^1.0.0"
