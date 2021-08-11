@@ -4591,6 +4591,13 @@ ng2-konva@^6.0.0:
   dependencies:
     tslib "^1.9.0"
 
+ngx-mask@^8.1.5:
+  version "8.2.0"
+  resolved "https://registry.yarnpkg.com/ngx-mask/-/ngx-mask-8.2.0.tgz#1eac06d96d09fc62dd6f4b3f285f7fca50838d08"
+  integrity sha512-eWEnaHnLz3x/OuI8HVrmGciR2U84c/GoNjyUwCHxhskHevMuCPJRnbHag19ggQJKaTjmzpP+LyPHslOqPgbQ5w==
+  dependencies:
+    tslib "^1.9.0"
+
 ngx-moment@^3.4.0:
   version "3.4.0"
   resolved "https://registry.yarnpkg.com/ngx-moment/-/ngx-moment-3.4.0.tgz#53bd64557e552c612b0f68b975d1c7ed34f28dfc"
@@ -4602,6 +4609,13 @@ ngx-take-until-destroy@^5.4.0:
   version "5.4.0"
   resolved "https://registry.yarnpkg.com/ngx-take-until-destroy/-/ngx-take-until-destroy-5.4.0.tgz#6c8606ee956584dc947e2eb609c48b8f98b09900"
   integrity sha512-e+VfCrHbLybdKWoQ8prdhmVzWI6vTnedr/9cVGQTkfepMdLz5D++VDk+Wnbs7mru6S9C+kIpNWUlh2YMPl928Q==
+  dependencies:
+    tslib "^1.9.0"
+
+ngx-webstorage@^4.0.1:
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/ngx-webstorage/-/ngx-webstorage-4.0.2.tgz#6c039c96e580d474150401085a0ff94365058732"
+  integrity sha512-OsYy/5KSC6PdWbYAjDfgT3wP1OxsNscZnapAzC1zeeYcxEhwOPfWg6AxEAbH+8IPCXXI4xeJ3fsDD07C8z/cQA==
   dependencies:
     tslib "^1.9.0"
 
@@ -5159,9 +5173,9 @@ path-key@^2.0.0, path-key@^2.0.1:
   integrity sha1-QRyttXTFoUDTpLGRDUDYDMn0C0A=
 
 path-parse@^1.0.6:
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/path-parse/-/path-parse-1.0.6.tgz#d62dbb5679405d72c4737ec58600e9ddcf06d24c"
-  integrity sha512-GSmOT2EbHrINBf9SR7CDELwlJ8AENk3Qn7OikK4nFYAu3Ote2+JYNVvkpAEQm3/TLNEJFD/xZJjzyxg3KBWOzw==
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/path-parse/-/path-parse-1.0.7.tgz#fbc114b60ca42b30d9daf5858e4bd68bbedb6735"
+  integrity sha512-LDJzPVEEEPR+y48z93A0Ed0yXb8pAByGWo/k5YYdYgpY2/2EsOsksJrq7lOHxryrVOn1ejG6oAp8ahvOIQD8sw==
 
 path-to-regexp@0.1.7:
   version "0.1.7"
